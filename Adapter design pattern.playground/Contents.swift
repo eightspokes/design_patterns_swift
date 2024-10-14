@@ -1,10 +1,10 @@
 import UIKit
 
-public protocol ITarget {
+public protocol IGreeting {
     func requestSayHi()
 }
 
-class Adapter : ITarget {
+class LanguageAdapter : IGreeting {
     func requestSayHi() {
         var japaneeseAdapter = Adaptee_Japaneese()
         japaneeseAdapter.sayHiInJapaneese()
@@ -27,6 +27,6 @@ class Adaptee_Japaneese {
     }
 }
 
-let target: ITarget = Adapter()
-target.requestSayHi()
+let greeting: IGreeting = LanguageAdapter()
+greeting.requestSayHi()
 
